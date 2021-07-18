@@ -45,5 +45,4 @@ class EpisodeControllerTest {
         ResponseEntity<Episode> response =  episodeController.getEpisode("pid");
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
     }
-
 }
