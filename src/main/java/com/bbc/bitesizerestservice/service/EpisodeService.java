@@ -3,6 +3,7 @@ package com.bbc.bitesizerestservice.service;
 import com.bbc.bitesizerestservice.model.Episode;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,8 +26,8 @@ public class EpisodeService {
         return episodes.get(pid);
     }
 
-    public Map<String, Episode> getEpisodes() {
-        return episodes;
+    public List<Episode> getEpisodes() {
+        return new ArrayList<>(episodes.values());
     }
 
     public Episode createEpisode(Episode episode) {

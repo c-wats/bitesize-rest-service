@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -35,7 +37,7 @@ public class EpisodeController {
     }
 
     @GetMapping(value = "/episode/list")
-    public ResponseEntity<Map<String, Episode>> getEpisode() {
+    public ResponseEntity<List<Episode>> getEpisode() {
         var episodes = episodeService.getEpisodes();
         if (episodes != null) {
             return new ResponseEntity<>(episodes, HttpStatus.OK);
